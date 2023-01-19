@@ -12,7 +12,9 @@ html{
    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .container{
-   
+   max-width: 1250px;
+   margin: 0 auto;
+   padding: .1rem 1rem;
 }
 
 
@@ -20,33 +22,31 @@ html{
 .btn-read-more:hover { background :  linear-gradient(to right, #54b3d6 0%, #54b3d6 50%, #000 50% , #000 100%); }
 
 
-section.hero { display: flex; justify-content: center;  }
-section.hero img {width: 32px; height: 32px;}
 section.hero  {
-   width: 100%;
    height: 650px;
    background-image: url("../img/first.jpg");
    background-size: cover;
    color :#191919;
    display: flex;
-   flex-direction: column;
    align-items: center;
+   justify-content: center;
 } 
-section.hero .text-1 {margin-top:  4rem; font-size: 22px;}
-section.hero .heading { margin-top: 2rem;font-size: 55px;}
-section.hero .text-2 {margin-top: 2rem; color: #00000033;  }
-section.hero  .btn-read-more { margin-top: 2rem;  }
+section.hero .text-1 {text-align: center; margin-top:  4rem; font-size: 22px;}
+section.hero .heading { text-align: center; margin-top: 2rem;font-size: 55px;}
+section.hero .text-2 {text-align: center; margin-top: 2rem; color: #00000033;  }
+section.hero .action { text-align: center;  }
+section.hero  .btn-read-more { margin-top: 2rem;   }
 
 
-section.what-we-do {width: 850px; margin:  1.5rem auto;}
-section.what-we-do p { margin-bottom: 1.5rem } 
-section.what-we-do .title { margin-bottom:  1.5rem; font-size: 2rem;}
-section.what-we-do .grid { display: grid;  grid-template-columns: auto auto auto; grid-gap: 10px;}
-section.what-we-do .element { display: flex; flex-direction: column; align-items: center;}
-section.what-we-do .element .name {margin-top : 1rem}
-section.what-we-do .element .info {text-align: center; font-size: 95%; width: 70%;}
-section.what-we-do .element img {background-color: #a5bba9; border-radius:50%; width: 64px; height: 64px;}
-section.what-we-do .btn-wrap {display: flex; justify-content: center; margin: 3rem 0 ;}
+section.products {max-width: 850px; margin:  1.5rem auto;}
+section.products .subheading { margin-bottom: 1.5rem } 
+section.products .heading { margin-bottom:  1.5rem; font-size: 2rem;}
+section.products .row { display: grid;  grid-template-columns: auto auto auto; grid-gap: 10px;}
+section.products .element { display: flex; flex-direction: column; align-items: center;}
+section.products .element .name {margin-top : 1rem}
+section.products .element .info {text-align: center; font-size: 95%; width: 70%;}
+section.products .element img {background-color: #a5bba9; border-radius:50%; width: 64px; height: 64px;}
+section.products .action {display: flex; justify-content: center; margin: 3rem 0 ;}
 
 @media screen and (max-width:768px) {
    section.what-we-do{
@@ -56,7 +56,9 @@ section.what-we-do .btn-wrap {display: flex; justify-content: center; margin: 3r
 
 
 section.about {background-color: #a5bba9;   color:#fff; padding : 3rem 0;}
-section.about .container {max-width: 1000px; margin : 0 auto ; display: flex; flex-direction: row; justify-content: space-between; font-size: 1.1rem;}
+
+
+section.about .row {display: grid; grid-template-columns: 1fr 1fr; gap: 40px;  }
 section.about .text-1 {margin-top: 5rem; font-size: 1.2rem;}
 section.about .title {margin-top: 1.5rem; font-size: 2rem;}
 section.about .text-2 {margin-top: 2rem;}
@@ -65,24 +67,15 @@ section.about img { width: 500px;}
 
 section.discount {background-color: #f1c50e; display: flex; flex-direction: column; align-items: center; color :#fff; padding : 2.5rem 2rem}
 section.discount .title {font-size: 2rem; margin-top: 2rem;}
-section.discount button {background-color: #fff; border-radius: 25px;padding : 1rem 1.5rem ;font-size: 1.2rem;}
+section.discount button {background-color: hsl(48, 89%, 40%); border-radius: 25px;padding : 1rem 1.5rem ;font-size: 1.2rem;}
+section.discount button:hover {background-color : hsl(48, 78%, 50%)}
 
 
-
-section.our-bread .wrap {
-   width: 850px;
-   margin : 0 auto;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   font-size: 1.3rem;
-}
-section.our-bread .wrap p {font-size: 85%; color :#777; }
-section.our-bread .grid {
-   width: 1000px; 
-   margin:  3rem auto;
+section.our-bread  p { max-width: 400px; margin:  0 auto;  color :#777; }
+section.our-bread .row {
+   margin:  3rem ;
    display: grid;
-   grid-template-columns: 480px 480px;
+   grid-template-columns: 1fr 1fr;
    grid-gap : 30px 30px;
 } 
 section.our-bread .card-wrap { background-color:#f3f8f4; padding : 2rem ; border-radius: 6px;}
@@ -96,8 +89,8 @@ section.our-bread .card button:hover {background: linear-gradient( to right, #a5
 
 section.gallery { background-color: #fff;  padding: 4rem 1rem ;}
 section.gallery .header {font-size: 2rem;}
-section.gallery .row {display: flex; flex-wrap: nowrap; gap: 40px;  }
-section.gallery img { width: 500px;border-radius: 4px;}
+section.gallery .row {display: grid ; grid-template-columns: 1fr 1fr; gap: 40px;  }
+section.gallery img { width: 500px;border-radius: 4px; border : 4px solid dashed}
 
 
 section.contact { background-color: #a5bba9; color : rgb(255, 255, 255);}
