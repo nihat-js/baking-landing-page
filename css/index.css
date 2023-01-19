@@ -8,12 +8,15 @@ button {cursor: pointer; border: none; }
 .mt-5 { margin-top: 5rem;}
 .mt-6 {margin-top:  6rem;}
 
-.btn-read-more { padding: 1rem 2rem; border-radius: 25px;  background-color : #f1c50e ; border:none; cursor: pointer; color : #fff ; }
 
-#index .menu-wrap { margin-top : 2rem;display: flex; justify-content: center;  }
-#index .menu-wrap img {width: 32px; height: 32px;}
 
-#index .first {
+.btn-read-more { transition: 2s all ;  padding: 1rem 2rem; border-radius: 25px;  background: linear-gradient(to right, #54b3d6 , #54b3d6 )   ; border:none; cursor: pointer; color : #fff ; }
+.btn-read-more:hover { background :  linear-gradient(to right, #54b3d6 0%, #54b3d6 50%, #000 50% , #000 100%); }
+
+
+section.hero { margin-top : 2rem;display: flex; justify-content: center;  }
+section.hero img {width: 32px; height: 32px;}
+section.hero  {
    width: 100%;
    height: 650px;
    background-image: url("../img/first.jpg");
@@ -22,13 +25,12 @@ button {cursor: pointer; border: none; }
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin-top: 2rem;
-}
+} 
 
-#index .first .text-1 {margin-top:  4rem; font-size: 22px;}
-#index .first .title { margin-top: 2rem;font-size: 55px;}
-#index .first .text-2 {margin-top: 2rem;}
-#index .first .btn-read-more { margin-top: 2rem;  }
+section.hero .text-1 {margin-top:  4rem; font-size: 22px;}
+section.hero .first .title { margin-top: 2rem;font-size: 55px;}
+section.hero .first .text-2 {margin-top: 2rem;}
+section.hero .first .btn-read-more { margin-top: 2rem;  }
 
 
 #index .what-we-do {width: 850px; margin:  1.5rem auto;}
@@ -77,6 +79,7 @@ button {cursor: pointer; border: none; }
 #index .our-bread .card .main { padding : 0 1rem;}
 #index .our-bread .card img {width: 250px;}
 #index .our-bread .card button {padding : 1rem 1.5rem; background-color:#a5bba9; border-radius: 22px; color :#fff;}
+#index .our-bread .card button:hover {background: linear-gradient( to right, #a5bba9  50% , #001 50%  );   }
 
 
 
@@ -90,7 +93,8 @@ button {cursor: pointer; border: none; }
 #index .contact  .call-wrap { display: flex; align-items: center; }
 #index .contact  .call-wrap img { padding : 1.5rem ;width: 90px; background-color: #f1c50e; border-radius: 50%; margin-right: 1.5rem;}
 #index .contact .call-wrap .text {font-size: 1.7rem;}
-#index .contact .call-wrap .number {color : #f1c50e ;font-size: 2rem; font-weight: bold;}
+#index .contact .call-wrap .number {color : #f1c50e ;font-size: 2rem; font-weight: bold;  transition: .2s all ; }
+
 
 
 #index footer {
