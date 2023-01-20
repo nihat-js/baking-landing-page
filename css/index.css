@@ -24,22 +24,45 @@ html{
 
 section.hero  {
    height: 650px;
-   background-image: url("../img/first.jpg");
-   background-size: cover;
    color :#191919;
    display: flex;
    align-items: center;
    justify-content: center;
+   position: relative;
+   /* filter: blur(1px); */
 } 
-section.hero .text-1 {text-align: center; margin-top:  4rem; font-size: 22px;}
-section.hero .heading { text-align: center; margin-top: 2rem;font-size: 55px;}
-section.hero .text-2 {text-align: center; margin-top: 2rem; color: #00000033;  }
-section.hero .action { text-align: center;  }
+section.hero::before{
+   content: '';
+   position: absolute;
+   left: 0;
+   top : 0;
+   content: '';
+   width: 100%;
+   height: 650px;
+   background-image : url("../img/first.jpg");
+   background-size: cover;
+   background-position: center;
+   z-index: -1;
+   opacity: .6;
+   filter: blur(1.5px);
+}
+section.hero .row { display: flex; flex-direction: column; align-items: center; }
+section.hero .text-1 {  text-align: center; margin-top:  4rem; font-size: 22px;}
+section.hero .heading { text-align: center;  margin-top: 2rem;font-size: 45px;}
+section.hero .text-2 {  text-align: center; margin-top: 2rem; color: #191919;  }
 section.hero  .btn-read-more { margin-top: 2rem;   }
 
+@media screen and (max-width:768px) {
+   section.hero{
+      height: 500px;
+   }
+   section.hero::before{
+      height: 500px;
+   }
+}
 
 section.products {max-width: 850px; margin:  1.5rem auto;}
-section.products .subheading { margin-bottom: 1.5rem } 
+section.products .subheading {font-size: 20px; margin-bottom: 1.5rem } 
 section.products .heading { margin-bottom:  1.5rem; font-size: 2rem;}
 section.products .row { display: grid;  grid-template-columns: auto auto auto; grid-gap: 10px;}
 section.products .element { display: flex; flex-direction: column; align-items: center;}
@@ -58,12 +81,18 @@ section.products .action {display: flex; justify-content: center; margin: 3rem 0
 section.about {background-color: #a5bba9;   color:#fff; padding : 3rem 0;}
 
 
-section.about .row {display: grid; grid-template-columns: 1fr 1fr; gap: 40px;  }
+section.about .row {display: grid; grid-template-columns: 1fr 1fr; gap: 30px;  }
 section.about .text-1 {margin-top: 5rem; font-size: 1.2rem;}
 section.about .title {margin-top: 1.5rem; font-size: 2rem;}
 section.about .text-2 {margin-top: 2rem;}
-section.about img { width: 500px;}
+section.about img { width: 100%}
 
+
+@media screen and (max-width:768px){
+   section.about .row {
+      grid-template-columns: 1fr;
+   }
+}
 
 section.discount {background-color: #f1c50e; display: flex; flex-direction: column; align-items: center; color :#fff; padding : 2.5rem 2rem}
 section.discount .title {font-size: 2rem; margin-top: 2rem;}
@@ -71,41 +100,66 @@ section.discount button {background-color: hsl(48, 89%, 40%); border-radius: 25p
 section.discount button:hover {background-color : hsl(48, 78%, 50%)}
 
 
-section.our-bread  p { max-width: 400px; margin:  0 auto;  color :#777; }
-section.our-bread .row {
-   margin:  3rem ;
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   grid-gap : 30px 30px;
-} 
-section.our-bread .card-wrap { background-color:#f3f8f4; padding : 2rem ; border-radius: 6px;}
-section.our-bread .card {display: flex; }
-section.our-bread .card .main { padding : 0 1rem;}
-section.our-bread .card img {width: 250px;}
-section.our-bread .card button {padding : 1rem 1.5rem; background-color:#a5bba9; border-radius: 22px; color :#fff;}
-section.our-bread .card button:hover {background: linear-gradient( to right, #a5bba9  50% , #001 50%  );   }
+
+section.our-bread  .title { font-size: 36px; margin-bottom: 16px;}
+section.our-bread  p { max-width: 550px; margin:  0 auto;  color :#777; }
+section.our-bread .row { margin:  3rem  0 ; display: grid; grid-template-columns: 1fr 1fr; gap : 30px 30px; } 
+section.our-bread .box { background-color:#f3f8f4; padding : 2rem ; border-radius: 6px; display: grid; grid-template-columns: 6fr 2fr; gap :30px;}
+section.our-bread .box img { width: 100%; }
+section.our-bread .box button {padding : 1rem 1.5rem; background-color:#a5bba9; border-radius: 22px; color :#fff;}
+section.our-bread .box button:hover {background: linear-gradient( to right, #a5bba9  50% , #001 50%  );   }
 
 
+
+@media screen and (max-width:768px){
+   section.our-bread .row{
+      grid-template-columns: 1fr ;
+   }
+   section.our-bread .box{
+      grid-template-columns: 1fr;
+      padding: 0 ;
+      gap: 0 0 ;
+   }
+   section.our-bread .box .right-column{ padding: 10px}
+   section.our-bread .box button { margin: 10px 0 ;}
+}
 
 section.gallery { background-color: #fff;  padding: 4rem 1rem ;}
 section.gallery .header {font-size: 2rem;}
 section.gallery .row {display: grid ; grid-template-columns: 1fr 1fr; gap: 40px;  }
-section.gallery img { width: 500px;border-radius: 4px; border : 4px solid dashed}
+section.gallery img {  width: 100%; border-radius: 4px; border : 4px solid dashed}
 
 
-section.contact { background-color: #a5bba9; color : rgb(255, 255, 255);}
-section.contact .container{max-width: 1200px; margin:  0 auto; padding: 3rem 0 ;font-size: 1.2rem; display: block;  }
+@media screen and (max-width:768px){
+   section.gallery .row {
+      display: grid;
+      grid-template-columns: 1fr;
+   }
+}
+
+
+section.contact { padding: 3rem 0  ; background-color: #a5bba9; color : rgb(255, 255, 255);}
 section.contact  .call-wrap { display: flex; align-items: center; }
-section.contact  .call-wrap img { padding : 1.5rem ;width: 90px; background-color: #f1c50e; border-radius: 50%; margin-right: 1.5rem;}
-section.contact .call-wrap .text {font-size: 1.7rem;}
-section.contact .call-wrap .number {color : #e6ba0e ;font-size: 2rem; font-weight: bold;  transition: .2s all ; }
+section.contact  .call-wrap img { padding : 15px ;width: 60px; background-color: #f1c50e; border-radius: 50%; margin-right: 12px;}
+section.contact .call-wrap .text {font-size: 20px; }
+section.contact .call-wrap .number {color : #e6ba0e ;font-size: 22px; font-weight: bold;  transition: .2s all ; }
 
-
+@media screen and (max-width:768px){
+}
 
 footer {
    background-color: #eceded;
    padding : 1rem 3rem;
-   color : #110c47;
+   color : #191919;
    display: flex;
    justify-content: flex-end;
+}
+footer .ref{
+   display: flex;
+   align-items: center;
+}
+
+footer img {
+   width: 24px;
+   margin-left: 10px;
 }
